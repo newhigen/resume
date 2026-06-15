@@ -55,22 +55,3 @@ const categories = [
     )}
   </div>
 </PageLayout>
-
-<style>
-  .topics { display: flex; flex-direction: column; gap: 2.25rem; max-width: 60rem; }
-  .topic-label {
-    font-size: 0.75rem; font-weight: 500; color: var(--text-tertiary);
-    text-transform: uppercase; letter-spacing: 0.06em;
-    margin: 0 0 0.9rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
-    display: flex; align-items: center; gap: 0.5rem;
-  }
-  .topic-count { color: var(--text-tertiary); opacity: 0.6; font-weight: 400; }
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
-    gap: 0.6rem 0.4rem;
-  }
-  @media (max-width: 520px) {
-    .card-grid { grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr)); }
-  }
-</style>

@@ -23,6 +23,18 @@ const sortedProjects = [...allProjects].sort(
   (a, b) => periodToNum(b.data.period) - periodToNum(a.data.period)
 );
 
+const TOPIC_ORDER = ['Claude·Agent', '데이터·대시보드', '의사결정·리서치', '개발·엔지니어링'];
+const projByCat = new Map<string, typeof sortedProjects>();
+for (const pr of sortedProjects) {
+  const c = pr.data.category;
+  if (!projByCat.has(c)) projByCat.set(c, []);
+  projByCat.get(c)!.push(pr);
+}
+const projCats = [
+  ...TOPIC_ORDER.filter(c => projByCat.has(c)),
+  ...[...projByCat.keys()].filter(c => !TOPIC_ORDER.includes(c)),
+];
+
 function formatRelativeDate(date: Date): { text: string; color: string } {
   const now = new Date();
   const diffMs = now.getTime() - new Date(date).getTime();
@@ -123,17 +135,24 @@ const grouped = sorted.reduce<Record<string, typeof allPosts>>((acc, post) => {
         <h2 style="font-size: 0.8125rem; font-weight: 500; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 1rem;">
           Projects
         </h2>
-        <div class="project-list">
-          {sortedProjects.map(project => (
-            <ProjectCard
-              title={project.data.title}
-              slug={project.id}
-              description={project.data.description}
-              period={project.data.period}
-              icon={project.data.icon}
-              category={project.data.category}
-              variant="minimal"
-            />
+        <div class="topics">
+          {projCats.map(cat => (
+            <div class="topic">
+              <h3 class="topic-label">{cat} <span class="topic-count">{projByCat.get(cat)!.length}</span></h3>
+              <div class="card-grid">
+                {projByCat.get(cat)!.map(project => (
+                  <ProjectCard
+                    title={project.data.title}
+                    slug={project.id}
+                    description={project.data.description}
+                    period={project.data.period}
+                    icon={project.data.icon}
+                    category={project.data.category}
+                    variant="card"
+                  />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
         <div style="margin-top: 1.5rem;">
