@@ -26,7 +26,7 @@ intro:
 
 ## 만든 법
 
-검진 PDF에 잠든 수치를 꺼내 건강 지도로 만든다.
+검진 PDF에서 수치를 추출해 연도별 추세로 정리한다.
 
 <div class="dg"><div class="dg-node"><b>검진 PDF</b></div><div class="dg-arr">→</div><div class="dg-node"><b>수치 추출</b></div><div class="dg-arr">→</div><div class="dg-node"><b>정상범위 비교</b></div><div class="dg-arr">→</div><div class="dg-node"><b>추세 분석</b></div><div class="dg-arr">→</div><div class="dg-node key"><b>인사이트</b></div></div>
 

@@ -32,11 +32,11 @@ intro:
 
 ## 접근
 
-근태를 '몇 시에 왔다'는 점이 아니라, 시기마다 달라지는 리듬으로 봤다. 야근이 몰리는 때, 휴가 뒤 회복, 계절별 변동 — 흩어진 점을 선으로 이으면 그제야 패턴이 보인다.
+근태를 '몇 시에 왔다'는 점이 아니라 시기별 리듬으로 봤다. 야근이 몰리는 때, 휴가 뒤 회복, 계절별 변동 — 점을 선으로 이으면 패턴이 보인다.
 
 ## 만든 법
 
-복잡한 데이터를 정리해 근태 지도로 만든다.
+근태 데이터를 정리해 통계와 차트로 만든다.
 
 <div class="dg"><div class="dg-node"><b>근태 엑셀</b></div><div class="dg-arr">→</div><div class="dg-node"><b>정리</b></div><div class="dg-arr">→</div><div class="dg-node"><b>통계 계산</b></div><div class="dg-arr">→</div><div class="dg-node"><b>차트</b></div><div class="dg-arr">→</div><div class="dg-node key"><b>대시보드</b></div></div>
 
