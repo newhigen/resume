@@ -15,15 +15,15 @@ intro:
     - "통합 직무기술서와 학습 로드맵을 받는다"
 ---
 
-## 문제 — 채용 JD는 흩어져 있고, '뭘 준비할지'가 안 보인다
+## 문제
 
 직군 하나를 준비하려 해도 회사마다 요구가 제각각이다. 공고는 채용 사이트마다 흩어져 있고, 공통으로 요구하는 게 뭔지·이 회사만의 차별점이 뭔지는 결국 손으로 비교한다. 그러다 우선순위가 흐려진다.
 
-## 관점 — 회사가 아니라 '직군의 공통분모'를
+## 접근
 
 개별 회사 공고를 하나씩 좇기보다, 한 직군을 여러 회사가 어떻게 요구하는지 겹쳐 봤다. 그러면 늘 공통으로 나오는 기술이 준비 우선순위로 떠오른다. 화려한 우대사항보다 공통분모가 더 정직한 신호라고 봤다. 다만 공고는 수집 시점·표본에 따라 달라지니 절대 기준은 아니다.
 
-## 어떻게 — 수집 → 구조화 → 집계 → 통합
+## 만든 법
 
 <div class="dg"><div class="dg-node"><b>채용 공고</b></div><div class="dg-arr">→</div><div class="dg-node"><b>본문 추출</b><span>Haiku</span></div><div class="dg-arr">→</div><div class="dg-node"><b>구조화</b><span>Sonnet/Opus</span></div><div class="dg-arr">→</div><div class="dg-node"><b>집계</b><span>deterministic</span></div><div class="dg-arr">→</div><div class="dg-node key"><b>매트릭스·JD·로드맵</b></div></div>
 
