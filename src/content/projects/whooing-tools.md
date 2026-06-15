@@ -4,7 +4,7 @@ description: 은행 명세서를 후잉 가계부 형식으로 자동 변환하�
 tags: [Python, Finance, MCP]
 period: "2026.05.18"
 category: 데이터·대시보드
-icon: "₩"
+icon: "💰"
 image: "/projects/whooing-tools.png"
 imageLight: "/projects/whooing-tools-light.png"
 intro:

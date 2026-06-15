@@ -4,7 +4,7 @@ description: 근태 데이터로 야근 시기와 출퇴근 리듬을 시각화.
 tags: [Dashboard, Data Visualization]
 period: "2026.05.24"
 category: 데이터·대시보드
-icon: "⌚"
+icon: "⏰"
 image: "/projects/worklog-dashboard.png"
 imageLight: "/projects/worklog-dashboard-light.png"
 dashboard: "/dashboards/worklog.html#sec-heatmap"

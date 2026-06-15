@@ -4,7 +4,7 @@ description: claude-dashboard status line을 개인 취향으로 커스터마이
 tags: [Claude Code, Customize]
 period: "2026.05.25"
 category: Claude·Agent
-icon: "⚙"
+icon: "🩹"
 github: https://github.com/newhigen/claude-dashboard-patches
 intro:
   summary: "claude-dashboard status line을 취향대로 손보고, 업데이트가 덮어써도 자동 복원하는 패치."

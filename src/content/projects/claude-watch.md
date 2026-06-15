@@ -4,7 +4,7 @@ description: 여러 Claude Code 창 중 답을 기다리는 창을 한눈에 보
 tags: [Claude Code, CLI]
 period: "2026.05.23"
 category: Claude·Agent
-icon: "◉"
+icon: "👀"
 github: https://github.com/newhigen/claude-watch
 intro:
   summary: "여러 Claude Code 창 중 내 입력을 기다리는 창을 한눈에 보여주는 모니터."

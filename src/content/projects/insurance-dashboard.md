@@ -4,7 +4,7 @@ description: 두 보험 상품을 한 기준으로 비교하고 30년 손익을 
 tags: [Insurance, Dashboard]
 period: "2026.05.25"
 category: 데이터·대시보드
-icon: "⚖"
+icon: "☂️"
 image: "/projects/insurance-dashboard.png"
 dashboard: "/dashboards/insurance.html"
 intro:

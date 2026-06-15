@@ -4,7 +4,7 @@ description: 후보 공약과 과거 이행 실적으로 "공약이 지켜질지
 tags: [Data Analysis, Civic]
 period: "2026.05.28"
 category: 의사결정·리서치
-icon: "🗳"
+icon: "🗳️"
 image: "/projects/election.png"
 dashboard: "/dashboards/election.html"
 intro:

@@ -4,7 +4,7 @@ description: 옵시디언으로 쓰고 아스트로로 배포하는 개인 지�
 tags: [Astro]
 period: "2025.07.01"
 category: 개발·엔지니어링
-icon: "¶"
+icon: "✍️"
 image: "/projects/blog-operation.png"
 imageLight: "/projects/blog-operation-light.png"
 intro:

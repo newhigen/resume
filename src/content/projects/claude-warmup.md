@@ -4,7 +4,7 @@ description: 출근 전 Claude quota 윈도우를 미리 깨워 하루 토큰을
 tags: [Claude Code, CLI]
 period: "2026.05.29"
 category: Claude·Agent
-icon: "☀"
+icon: "☀️"
 github: https://github.com/newhigen/claude-warmup
 image: "/projects/claude-warmup.png"
 dashboard: "/dashboards/claude-warmup.html"

@@ -4,7 +4,7 @@ description: 읽은 책 데이터로 분야·저자 분포와 시기별 흐름�
 tags: [Data Analysis, Python]
 period: "2026.05.30"
 category: 데이터·대시보드
-icon: "❉"
+icon: "📚"
 image: "/projects/book-analysis.png"
 dashboard: "/dashboards/book-analysis.html"
 timeline:

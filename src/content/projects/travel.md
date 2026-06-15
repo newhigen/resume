@@ -4,7 +4,7 @@ description: 가족 해외여행을 시기·비용·동선·체력까지 한 화
 tags: [Dashboard, Planning]
 period: "2026.05.22"
 category: 의사결정·리서치
-icon: "✈"
+icon: "✈️"
 image: "/projects/travel.png"
 dashboard: "/dashboards/travel/travel.html"
 intro:
