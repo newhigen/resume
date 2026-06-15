@@ -3,7 +3,7 @@ title: 닌텐도 스위치2 구매 분석
 description: 스위치2를 어디서·얼마에 살지 — 적정가·버전·타이밍·게임을 '결론 먼저, 근거는 옆에' 보드로 정리한 구매 분석.
 tags: [Research, Decision]
 period: "2026.05"
-category: AI in Daily Life
+category: 의사결정·리서치
 icon: "🎮"
 image: "/projects/switch2.png"
 dashboard: "/dashboards/switch2-price-analysis.html"

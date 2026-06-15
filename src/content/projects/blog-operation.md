@@ -3,7 +3,7 @@ title: 블로그 운영
 description: 옵시디언으로 쓰고 아스트로로 배포하는 개인 지식 관리 시스템.
 tags: [Astro]
 period: "2025.07.01"
-category: AI in Daily Life
+category: 개발·엔지니어링
 icon: "¶"
 image: "/projects/blog-operation.png"
 imageLight: "/projects/blog-operation-light.png"

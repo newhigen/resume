@@ -2,7 +2,7 @@
 title: "GitHub 개인 프로젝트 기본 설정"
 description: 개인 GitHub 프로젝트의 기본 설정 및 유용한 기능 정리
 pubDate: 2025-11-29
-category: Dev Environment
+category: 개발·엔지니어링
 tags: [GitHub]
 ---
 

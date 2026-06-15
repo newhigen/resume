@@ -2,8 +2,8 @@
 title: ".claude 디렉토리 구조"
 description: Claude Code 프로젝트의 .claude 폴더 전체 구조 정리.
 pubDate: 2026-03-28
-category: Agent
-tags: [Claude]
+category: Claude·Agent
+tags: [Claude Code]
 ---
 
 출처: [@akshay_pachaar](https://x.com/akshay_pachaar/status/2035341800739877091)

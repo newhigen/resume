@@ -2,7 +2,7 @@
 title: "IDE"
 description: VSCode 계열 IDE 확장 및 설정 모음
 pubDate: 2025-11-29
-category: Dev Environment
+category: 개발·엔지니어링
 tags: [VSCode, DevEnv]
 ---
 

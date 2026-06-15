@@ -2,7 +2,7 @@
 title: "효과적인 코드 리뷰란"
 description: 코드 리뷰의 본질과 리뷰어·작성자 각각의 역할에 대한 경험 기반 정리
 pubDate: 2025-11-30
-category: Software Engineering
+category: 개발·엔지니어링
 tags: [CodeReview, Collaboration]
 ---
 

@@ -2,7 +2,7 @@
 title: "MongoDB의 Data Versioning"
 description: MongoDB에서 data versioning system이 적합하지 않은 이유와 내부 구현 방법
 pubDate: 2025-11-26
-category: Software Engineering
+category: 개발·엔지니어링
 tags: [MongoDB, MLOps]
 ---
 
