@@ -13,6 +13,13 @@ interface Props {
 
 const { title, slug, description, period, icon, image, imageLight, category, variant = 'list' } = Astro.props;
 const href = '/projects/' + slug;
+const TOPIC_COLOR: Record<string, string> = {
+  'Claude·Agent': '#d97757',
+  '데이터·대시보드': '#2f9e44',
+  '의사결정·리서치': '#1971c2',
+  '개발·엔지니어링': '#7c3aed',
+};
+const tint = (category && TOPIC_COLOR[category]) || '#3b82f6';
 const previewDark = image || imageLight || '';
 const previewLight = imageLight || image || '';
 
@@ -29,13 +36,9 @@ const periodText = periodLabel(period);
 ---
 
 {variant === 'card' ? (
-  <a class='project-card' href={href}>
-    <span class='pc-head'>
-      {icon && <span class='pc-icon'>{icon}</span>}
-      <span class='pc-title'>{title}</span>
-    </span>
-    <span class='pc-sum'>{description}</span>
-    {periodText && <span class='pc-period'>{periodText}</span>}
+  <a class='project-tile' href={href} style={`--tint:${tint}`}>
+    <span class='pt-icon'>{icon || '◆'}</span>
+    <span class='pt-name'>{title}</span>
   </a>
 ) : variant === 'minimal' ? (
   <a class='project-min' href={href}>
@@ -125,21 +128,30 @@ const periodText = periodLabel(period);
     .pi-desc { display: none; }
   }
 
-  /* ── card (portfolio) ── */
-  .project-card {
-    display: flex; flex-direction: column; gap: 0.45rem;
-    padding: 1rem 1.1rem; min-height: 6.5rem;
-    border: 1px solid var(--border); border-radius: 12px;
-    background: var(--bg); text-decoration: none;
-    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  /* ── tile (ai-hub style icon card) ── */
+  .project-tile {
+    display: flex; flex-direction: column; align-items: center; gap: 0.55rem;
+    padding: 1rem 0.4rem 0.85rem; border-radius: 14px;
+    text-decoration: none; transition: background-color 0.15s ease;
   }
-  .project-card:hover { border-color: var(--accent, #3b82f6); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,0.08); }
-  .pc-head { display: flex; align-items: center; gap: 0.5rem; }
-  .pc-icon { font-size: 1.05rem; color: var(--text-tertiary); flex-shrink: 0; }
-  .pc-title { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); }
-  .pc-sum {
-    font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;
+  .project-tile:hover { background: var(--selection); }
+  .pt-icon {
+    width: 3.4rem; height: 3.4rem; border-radius: 15px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.55rem; line-height: 1;
+    color: var(--tint);
+    background: color-mix(in srgb, var(--tint) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--tint) 28%, transparent);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .project-tile:hover .pt-icon {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px color-mix(in srgb, var(--tint) 30%, transparent);
+  }
+  .pt-name {
+    font-size: 0.78rem; color: var(--text-secondary); text-align: center;
+    line-height: 1.35; max-width: 7rem;
     display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
   }
-  .pc-period { font-size: 0.72rem; color: var(--text-tertiary); margin-top: auto; }
+  .project-tile:hover .pt-name { color: var(--text-primary); }
 </style>
