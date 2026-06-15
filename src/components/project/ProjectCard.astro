@@ -8,7 +8,7 @@ interface Props {
   image?: string;
   imageLight?: string;
   category?: string;
-  variant?: 'list' | 'minimal';
+  variant?: 'list' | 'minimal' | 'card';
 }
 
 const { title, slug, description, period, icon, image, imageLight, category, variant = 'list' } = Astro.props;
@@ -28,7 +28,16 @@ function periodLabel(p?: string): string | undefined {
 const periodText = periodLabel(period);
 ---
 
-{variant === 'minimal' ? (
+{variant === 'card' ? (
+  <a class='project-card' href={href}>
+    <span class='pc-head'>
+      {icon && <span class='pc-icon'>{icon}</span>}
+      <span class='pc-title'>{title}</span>
+    </span>
+    <span class='pc-sum'>{description}</span>
+    {periodText && <span class='pc-period'>{periodText}</span>}
+  </a>
+) : variant === 'minimal' ? (
   <a class='project-min' href={href}>
     {icon && <span class='min-icon'>{icon}</span>}
     <span class='min-title'>{title}</span>
@@ -115,4 +124,22 @@ const periodText = periodLabel(period);
   @media (max-width: 600px) {
     .pi-desc { display: none; }
   }
+
+  /* ── card (portfolio) ── */
+  .project-card {
+    display: flex; flex-direction: column; gap: 0.45rem;
+    padding: 1rem 1.1rem; min-height: 6.5rem;
+    border: 1px solid var(--border); border-radius: 12px;
+    background: var(--bg); text-decoration: none;
+    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .project-card:hover { border-color: var(--accent, #3b82f6); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,0.08); }
+  .pc-head { display: flex; align-items: center; gap: 0.5rem; }
+  .pc-icon { font-size: 1.05rem; color: var(--text-tertiary); flex-shrink: 0; }
+  .pc-title { font-size: 0.95rem; font-weight: 600; color: var(--text-primary); }
+  .pc-sum {
+    font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .pc-period { font-size: 0.72rem; color: var(--text-tertiary); margin-top: auto; }
 </style>
