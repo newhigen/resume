@@ -3,8 +3,8 @@ title: 독서 성향 분석
 description: 읽은 책 데이터로 분야·저자 분포와 시기별 흐름을 정리하는 리포트.
 tags: [Data Analysis, Python]
 period: "2026.05.30"
-category: AI in Daily Life
-icon: "❉"
+category: 데이터·대시보드
+icon: "📚"
 image: "/projects/book-analysis.png"
 dashboard: "/dashboards/book-analysis.html"
 timeline:

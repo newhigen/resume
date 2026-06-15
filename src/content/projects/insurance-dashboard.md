@@ -3,8 +3,8 @@ title: 보험 상품 비교 분석
 description: 두 보험 상품을 한 기준으로 비교하고 30년 손익을 시뮬레이션.
 tags: [Insurance, Dashboard]
 period: "2026.05.25"
-category: AI in Daily Life
-icon: "⚖"
+category: 데이터·대시보드
+icon: "☂️"
 image: "/projects/insurance-dashboard.png"
 dashboard: "/dashboards/insurance.html"
 intro:

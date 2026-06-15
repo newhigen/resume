@@ -34,7 +34,7 @@ const projects = defineCollection({
       summary: z.string().optional(),
       use: z.array(z.string()).default([]),
     }).optional(),
-    category: z.string().default('AI in Daily Life'),
+    category: z.string().default('개발·엔지니어링'),
     tags: z.array(z.string()).default([]),
     period: z.string().optional(),
     icon: z.string().optional(),

@@ -3,8 +3,8 @@ title: 선거 공약 분석
 description: 후보 공약과 과거 이행 실적으로 "공약이 지켜질지"를 전망하는 분석 도구. 가상 도시 예시.
 tags: [Data Analysis, Civic]
 period: "2026.05.28"
-category: AI in Daily Life
-icon: "🗳"
+category: 의사결정·리서치
+icon: "🗳️"
 image: "/projects/election.png"
 dashboard: "/dashboards/election.html"
 intro:

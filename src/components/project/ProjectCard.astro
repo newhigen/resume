@@ -8,11 +8,18 @@ interface Props {
   image?: string;
   imageLight?: string;
   category?: string;
-  variant?: 'list' | 'minimal';
+  variant?: 'list' | 'minimal' | 'card';
 }
 
 const { title, slug, description, period, icon, image, imageLight, category, variant = 'list' } = Astro.props;
 const href = '/projects/' + slug;
+const TOPIC_COLOR: Record<string, string> = {
+  'Claude·Agent': '#d97757',
+  '데이터·대시보드': '#2f9e44',
+  '의사결정·리서치': '#1971c2',
+  '개발·엔지니어링': '#7c3aed',
+};
+const tint = (category && TOPIC_COLOR[category]) || '#3b82f6';
 const previewDark = image || imageLight || '';
 const previewLight = imageLight || image || '';
 
@@ -28,7 +35,12 @@ function periodLabel(p?: string): string | undefined {
 const periodText = periodLabel(period);
 ---
 
-{variant === 'minimal' ? (
+{variant === 'card' ? (
+  <a class='project-tile' href={href} style={`--tint:${tint}`}>
+    <span class='pt-icon'>{icon || '◆'}</span>
+    <span class='pt-name'>{title}</span>
+  </a>
+) : variant === 'minimal' ? (
   <a class='project-min' href={href}>
     {icon && <span class='min-icon'>{icon}</span>}
     <span class='min-title'>{title}</span>
@@ -115,4 +127,5 @@ const periodText = periodLabel(period);
   @media (max-width: 600px) {
     .pi-desc { display: none; }
   }
+
 </style>

@@ -2,7 +2,7 @@
 title: "모바일로 로컬 개발 서버 접속하기"
 description: ngrok과 Claude Code로 모바일/태블릿에서 localhost를 확인하는 방법
 pubDate: 2026-04-04
-category: Dev Environment
+category: 개발·엔지니어링
 tags: [ngrok, Claude Code, DevEnv]
 ---
 

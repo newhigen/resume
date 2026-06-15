@@ -3,7 +3,7 @@ title: 커리어 레이더
 description: 한국 IT 채용 공고(JD)를 직군별 회사×스택 매트릭스 + 통합 직무기술서 + 학습 로드맵으로 정리하는 도구. 회사명은 익명화한 예시.
 tags: [Data Analysis, Career]
 period: "2026.05"
-category: AI in Daily Life
+category: 의사결정·리서치
 icon: "📡"
 image: "/projects/career-radar.png"
 dashboard: "/dashboards/career-radar.html"

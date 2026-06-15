@@ -2,8 +2,8 @@
 title: Claude Code 사용 팁
 description: Claude Code를 더 효율적으로 사용하기 위한 터미널, 알림, 모바일 팁
 pubDate: 2026-03-29
-category: Agent
-tags: [Claude]
+category: Claude·Agent
+tags: [Claude Code]
 ---
 
 ## 터미널 설정

@@ -2,7 +2,7 @@
 title: "2026 엔지니어링 Conference"
 description: 2026년 국내외 개발·AI Conference 일정 모음. 날짜 확정된 것과 작년 기준 예상 일정 포함.
 pubDate: 2026-03-28
-category: 커뮤니티
+category: 개발·엔지니어링
 tags: [Conference]
 ---
 

@@ -2,8 +2,8 @@
 title: "SKILL.md"
 description: SKILL.md로 Claude Code에 task-specific 전문성을 추가하는 방법과 CLAUDE.md와의 차이
 pubDate: 2026-03-25
-category: Agent
-tags: [Claude]
+category: Claude·Agent
+tags: [Claude Code]
 ---
 
 SKILL.md는 Claude Code에 task-specific 전문성을 추가하는 방법이다. CLAUDE.md가 모든 대화에 로딩되는 반면, SKILL.md는 name과 description만 context window에 들어가고 필요할 때 on-demand로 로딩된다.

@@ -2,7 +2,7 @@
 title: "git checkout <branch> -- <path>"
 description: 다른 브랜치의 특정 파일만 현재 브랜치로 가져오는 방법
 pubDate: 2025-11-25
-category: Software Engineering
+category: 개발·엔지니어링
 tags: [git]
 ---
 
