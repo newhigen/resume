@@ -7,57 +7,74 @@
 ## 최종 모양
 
 ```
-sungd.uk          나 — 소개 + 프로젝트 14개   (newhigen.github.io repo 개조, Netlify)
+sungd.uk          나 — 소개 + 프로젝트 14개   (newhigen.github.io repo, Netlify)
 ├── resume.       이력서                      (그대로)
-├── writing.      글 — 책·생각·기술            (blog-writing 이사)
+├── writing.      글 — 책·생각·기술            (blog-writing)
 └── today.        Claude Code·Codex 큐레이션   (ai-pick, ai. 에서 개명)
 ```
 
-tech. 는 없어진다. 콘텐츠는 둘로 나뉜다.
+tech. 는 없어졌다. 프로젝트 소개 14개는 루트에 남고, 기술 글 12편은 writing 으로 갔다.
 
-- 프로젝트 소개 14개 → 루트에 남는다 (repo 를 그대로 쓰므로 이동 없음)
-- 기술 글 12편 → writing 으로 옮기고 "기술" 카테고리를 만든다
+## 코드 작업 — 끝남
 
-## 단계
+세 repo 모두 브랜치에 커밋했다. **아직 push 안 됨** (아래 "남은 일" 참고).
 
-각 단계에 끝났는지 확인할 방법을 같이 적는다. 1 과 2 는 서로 독립이라 순서를 바꿔도 된다. 3 은 1·2 가 끝난 뒤.
+| repo               | 브랜치           | 한 일                                                            |
+| ------------------ | ---------------- | ---------------------------------------------------------------- |
+| newhigen.github.io | `worktree-reorg-plan` | blog 걷어내고 루트 사이트로 개조, Netlify 설정·리다이렉트 표      |
+| blog-writing       | `reorg-writing`  | 기술 글 12편 흡수, 기술 카테고리 추가, 도메인 표기 변경           |
+| ai-pick            | `reorg-today`    | CNAME·sitemap·robots·README 를 today.sungd.uk 로                  |
 
-### 1. 루트 사이트 만들기 (newhigen.github.io repo)
+검증한 것: 두 Astro 사이트 모두 빌드 통과. writing 은 글 79편이 다 생성되고 옮겨온 12편의 주소가 예전 그대로(`/claude-code-tips/` 등). 루트는 18쪽이 나오고 내부 링크에 깨진 곳이 없다.
 
-- [ ] 기술 글 12편(`src/content/blog/`)을 blog-writing 으로 옮기고 여기선 지운다
-- [ ] blog 컬렉션 흔적 정리 — `src/content.config.ts`, 홈·목록 페이지에서 blog 참조 제거
-- [ ] 홈을 소개 + 프로젝트 + 다른 사이트 링크 구조로 다시 쓴다
-- [ ] GitHub Pages → Netlify (`netlify.toml` 추가, `.github/workflows/deploy.yml` 제거)
-- [ ] `public/CNAME` 을 `sungd.uk` 로
+## 남은 일 — 사람이 해야 하는 것
 
-검증: 로컬 빌드에 blog 관련 에러·깨진 링크가 없고, 홈에서 세 사이트로 다 넘어간다.
+코드로는 못 하는 부분이다. **순서대로** 해야 도메인이 겹치지 않는다.
 
-### 2. writing 이사 (blog-writing repo)
+### 1. 브랜치 합치기
 
-- [ ] "기술" 카테고리 추가하고 1단계에서 넘어온 글 12편을 붙인다
-- [ ] Netlify 커스텀 도메인을 `writing.sungd.uk` 로 변경
+이 세션의 SSH 키가 회사 계정이라 개인 repo 에 push 를 못 했다. 로컬에서 합치고 올리면 된다.
 
-검증: 기존 글 67편 + 기술 글 12편이 다 뜨고, 카테고리 필터가 셋 다 동작한다.
+```sh
+cd ~/dev/sites/newhigen.github.io && git merge worktree-reorg-plan && git push
+cd ~/dev/sites/blog-writing      && git merge reorg-writing      && git push
+cd ~/dev/sites/ai-pick           && git merge reorg-today        && git push
+```
 
-### 3. 리다이렉트 (옛 링크 살리기)
+### 2. GitHub Pages 끄기
 
-- [ ] 루트 `netlify.toml`: `/posts/* → https://writing.sungd.uk/posts/:splat` 301
-- [ ] tech.sungd.uk 처리 — 지금은 GitHub Pages 라 301 을 못 건다. repo 가 루트로 바뀌면 tech DNS 는 갈 곳이 없어지므로, tech 도 같은 Netlify 사이트에 붙이고 거기서 301 을 건다
-  - `/projects/* → https://sungd.uk/projects/:splat`
-  - `/blog/* → https://writing.sungd.uk/...`
+- `newhigen.github.io` — Settings → Pages 에서 배포 끄기. 배포 워크플로는 지웠지만 Pages 설정이 살아 있으면 tech.sungd.uk 를 계속 잡고 있어 Netlify 에 못 붙인다.
+- `ai-pick` — Pages 는 유지. 커스텀 도메인만 `today.sungd.uk` 로 바꾼다. (CNAME 파일은 이미 바뀌어 있으니 push 후 자동 반영될 수도 있다. Settings 에서 확인.)
 
-검증: 옛 주소 몇 개를 직접 열어 새 주소로 넘어가는지 본다.
+### 3. Netlify
 
-### 4. today 개명 (ai-pick repo)
+- **새 사이트**: `newhigen.github.io` repo 연결. 빌드 설정은 `netlify.toml` 이 갖고 있다. 커스텀 도메인으로 `sungd.uk`(대표), `tech.sungd.uk`, `ai.sungd.uk` 셋 다 붙인다 — 뒤의 둘은 옛 주소를 넘겨주기 위한 것이라 꼭 붙여야 리다이렉트가 산다.
+- **기존 blog-writing 사이트**: 커스텀 도메인을 `sungd.uk` → `writing.sungd.uk` 로 바꾼다.
 
-- [ ] `CNAME` → `today.sungd.uk`
-- [ ] `sitemap.xml`·`robots.txt`·README 의 ai.sungd.uk 문자열 교체
-- [ ] ai.sungd.uk → today.sungd.uk 301
-- [ ] README 의 죽은 링크 수정 — `tech.sungd.uk/projects/claude-code-tracking` 이 루트로 옮겨간다
+⚠ sungd.uk 를 blog-writing 사이트에서 떼어낸 뒤에 새 사이트에 붙여야 한다. 동시에 두 사이트가 같은 도메인을 가질 수 없다.
 
-검증: today 로 열리고, ai 로 들어가도 넘어온다.
+### 4. DNS
+
+```
+sungd.uk          → 새 Netlify 사이트 (루트)
+writing.sungd.uk  → 기존 blog-writing Netlify 사이트
+tech.sungd.uk     → 새 Netlify 사이트 (리다이렉트 전용)
+ai.sungd.uk       → 새 Netlify 사이트 (리다이렉트 전용)
+today.sungd.uk    → GitHub Pages (newhigen.github.io)
+resume.sungd.uk   → 그대로
+```
+
+### 5. 확인
+
+옛 주소 몇 개를 직접 열어본다.
+
+- `sungd.uk/the-go-giver-1/` → writing 으로 넘어가야 한다
+- `tech.sungd.uk/claude-code-tips` → writing 의 같은 글로
+- `tech.sungd.uk/projects/claude-watch` → sungd.uk 의 같은 쪽으로
+- `ai.sungd.uk` → today 로
 
 ## 보류
 
 - calc-tools — 도메인 안 붙임. 나중에 붙인다면 tools. 아래로 묶는 안이 있다.
-- newhigen.github.io repo 이름 — Netlify 로 가면 GitHub Pages 용 이름일 이유가 없다. 급하지 않다.
+- newhigen.github.io repo 이름 — Netlify 로 가면 GitHub Pages 용 이름일 이유가 없다. `package.json` 의 이름은 아직 `blog-tech` 다. 급하지 않다.
+- Google Analytics 태그는 tech 시절 것을 그대로 쓴다. 새 사이트로 성격이 바뀌었으니 나중에 볼 것.
