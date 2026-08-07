@@ -1,19 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Sidebar from '../components/layout/Sidebar.astro';
-import PostCard from '../components/blog/PostCard.astro';
 import ProjectCard from '../components/project/ProjectCard.astro';
-
-const allPosts = await getCollection('blog');
-const recentPosts = allPosts
-  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
-  .slice(0, 5);
-const sorted = allPosts.sort(
-  (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
-);
+import SiteLinks from '../components/layout/SiteLinks.astro';
 
 const allProjects = await getCollection('projects');
+
 function periodToNum(p?: string) {
   if (!p) return 0;
   const m = p.match(/(\d{4})\.(\d{2})(?:\.(\d{2}))?/);
@@ -34,134 +26,95 @@ const projCats = [
   ...TOPIC_ORDER.filter(c => projByCat.has(c)),
   ...[...projByCat.keys()].filter(c => !TOPIC_ORDER.includes(c)),
 ];
-
-function formatRelativeDate(date: Date): { text: string; color: string } {
-  const now = new Date();
-  const diffMs = now.getTime() - new Date(date).getTime();
-  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-
-  if (diffDays < 1) return { text: '오늘', color: 'rgb(217, 119, 6)' };
-  if (diffDays < 7) return { text: `${diffDays}일 전`, color: 'rgb(192, 132, 16)' };
-  if (diffDays < 31) return { text: `${Math.floor(diffDays / 7)}주 전`, color: 'rgb(120, 113, 108)' };
-  if (diffDays < 365) return { text: `${Math.floor(diffDays / 30)}달 전`, color: 'rgb(107, 114, 128)' };
-  return { text: `${Math.floor(diffDays / 365)}년 전`, color: 'rgb(100, 116, 139)' };
-}
-
-const grouped = sorted.reduce<Record<string, typeof allPosts>>((acc, post) => {
-  const cat = post.data.category;
-  if (!acc[cat]) acc[cat] = [];
-  acc[cat].push(post);
-  return acc;
-}, {});
 ---
 
 <style>
-  .layout-wrapper {
+  .home-wrap {
     width: 100%;
-    max-width: 72rem;
+    max-width: 60rem;
     margin: 0 auto;
-    padding: 1.25rem 2rem;
-    display: flex;
-    gap: 0;
+    padding: 2.5rem 2rem;
     box-sizing: border-box;
   }
-  .sidebar-aside {
-    width: 13rem;
-    flex-shrink: 0;
-    padding-right: 1rem;
+  .intro {
+    margin-bottom: 2.5rem;
   }
-  .home-main {
-    flex: 1;
-    min-width: 0;
-    max-width: 52rem;
-    padding: 0 1.25rem;
+  .intro h1 {
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.01em;
+  }
+  .intro p {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.8;
+    max-width: 42rem;
+  }
+  .section-label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 1rem;
   }
   .home-section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.75rem;
   }
-  .home-section:first-child {
-    margin-bottom: 2.5rem;
-  }
-  .project-list {
-    max-width: 44rem;
+  .all-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--text-tertiary);
   }
 
   @media (max-width: 768px) {
-    .layout-wrapper { padding: 1rem 1.25rem; }
-    .sidebar-aside { display: none; }
-    .home-main { padding: 0; max-width: 100%; }
+    .home-wrap { padding: 1.75rem 1.25rem; }
   }
 </style>
 
-<BaseLayout title="tech.sungduk">
+<BaseLayout title="조성덕 — sungduk">
+  <div class="home-wrap">
+    <section class="intro">
+      <h1>조성덕</h1>
+      <p>
+        직접 쓸 도구를 만들면서 일합니다. 만든 것들을 네 주제로 묶어 아래에 정리했습니다 —
+        Claude·Agent, 데이터·대시보드, 의사결정·리서치, 개발·엔지니어링. 글은 writing 에,
+        이력서는 resume 에 따로 있습니다.
+      </p>
+    </section>
 
-  <div class="layout-wrapper">
-    <aside class="sidebar-aside">
-      <Sidebar />
-    </aside>
+    <section class="home-section">
+      <h2 class="section-label">Elsewhere</h2>
+      <SiteLinks current="home" />
+    </section>
 
-    <div class="home-main">
-      <section class="home-section">
-        <p style="font-size: 0.9375rem; color: var(--text-secondary); margin: 0; line-height: 1.7;">
-          기술에 대해 쓰고, 직접 만든 것을 기록합니다. 글과 프로젝트를 네 주제로 묶었습니다 — Claude·Agent · 데이터·대시보드 · 의사결정·리서치 · 개발·엔지니어링.
-        </p>
-      </section>
-
-      <section class="home-section">
-        <h2 style="font-size: 0.8125rem; font-weight: 500; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 1rem;">
-          Recent Posts
-        </h2>
-        <div class="post-list">
-          {recentPosts.map(post => (
-            <PostCard
-              title={post.data.title}
-              slug={post.id}
-              description={post.data.description}
-              pubDate={post.data.pubDate}
-              category={post.data.category}
-              tags={post.data.tags}
-              compact
-            />
-          ))}
-        </div>
-        <div style="margin-top: 1.5rem;">
-          <a href="/posts" style="font-size: 0.875rem; color: var(--text-tertiary);">
-            All →
-          </a>
-        </div>
-      </section>
-
-      <section class="home-section">
-        <h2 style="font-size: 0.8125rem; font-weight: 500; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 1rem;">
-          Projects
-        </h2>
-        <div class="topics">
-          {projCats.map(cat => (
-            <div class="topic">
-              <h3 class="topic-label">{cat} <span class="topic-count">{projByCat.get(cat)!.length}</span></h3>
-              <div class="card-grid">
-                {projByCat.get(cat)!.map(project => (
-                  <ProjectCard
-                    title={project.data.title}
-                    slug={project.id}
-                    description={project.data.description}
-                    period={project.data.period}
-                    icon={project.data.icon}
-                    category={project.data.category}
-                    variant="card"
-                  />
-                ))}
-              </div>
+    <section class="home-section">
+      <h2 class="section-label">Projects</h2>
+      <div class="topics">
+        {projCats.map(cat => (
+          <div class="topic">
+            <h3 class="topic-label">{cat} <span class="topic-count">{projByCat.get(cat)!.length}</span></h3>
+            <div class="card-grid">
+              {projByCat.get(cat)!.map(project => (
+                <ProjectCard
+                  title={project.data.title}
+                  slug={project.id}
+                  description={project.data.description}
+                  period={project.data.period}
+                  icon={project.data.icon}
+                  category={project.data.category}
+                  variant="card"
+                />
+              ))}
             </div>
-          ))}
-        </div>
-        <div style="margin-top: 1.5rem;">
-          <a href="/projects" style="font-size: 0.875rem; color: var(--text-tertiary);">
-            All →
-          </a>
-        </div>
-      </section>
-    </div>
+          </div>
+        ))}
+      </div>
+      <a href="/projects" class="all-link">All →</a>
+    </section>
   </div>
-
 </BaseLayout>

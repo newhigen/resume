@@ -5,7 +5,7 @@ tags: [Claude Code, Curation]
 period: "2026.05.28"
 category: Claude·Agent
 icon: "📰"
-link: https://ai.sungd.uk
+link: https://today.sungd.uk
 image: "/projects/claude-code-tracking.png"
 intro:
   summary: "Claude Code 릴리스마다 '지금 써볼 만한 변화'를 골라주는 changelog 큐레이션."

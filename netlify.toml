@@ -1,0 +1,905 @@
+# 루트 사이트(sungd.uk) — Astro 정적 빌드
+
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# ─────────────────────────────────────────────────────────────
+# tech.sungd.uk — 해체됨. 이 사이트에 도메인을 붙여 여기서 넘긴다.
+# 프로젝트 소개는 루트로 왔고, 기술 글은 writing 으로 갔다.
+# ─────────────────────────────────────────────────────────────
+
+[[redirects]]
+  from = "https://tech.sungd.uk/2026-conferences"
+  to = "https://writing.sungd.uk/2026-conferences/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tech.sungd.uk/claude-code-tips"
+  to = "https://writing.sungd.uk/claude-code-tips/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tech.sungd.uk/claude-directory-structure"
+  to = "https://writing.sungd.uk/claude-directory-structure/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tech.sungd.uk/claude-skill-md"
+  to = "https://writing.sungd.uk/claude-skill-md/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tech.sungd.uk/claude-subagents"
+  to = "https://writing.sungd.uk/claude-subagents/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tech.sungd.uk/code-review"
+  to = "https://writing.sungd.uk/code-review/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tech.sungd.uk/git-checkout"
+  to = "https://writing.sungd.uk/git-checkout/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tech.sungd.uk/github-project"
+  to = "https://writing.sungd.uk/github-project/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tech.sungd.uk/ide"
+  to = "https://writing.sungd.uk/ide/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tech.sungd.uk/macos"
+  to = "https://writing.sungd.uk/macos/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tech.sungd.uk/mongodb-data-versioning"
+  to = "https://writing.sungd.uk/mongodb-data-versioning/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tech.sungd.uk/tablet-dev-with-ngrok"
+  to = "https://writing.sungd.uk/tablet-dev-with-ngrok/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://tech.sungd.uk/*"
+  to = "https://sungd.uk/:splat"
+  status = 301
+  force = true
+
+# ─────────────────────────────────────────────────────────────
+# 옛 글 주소 79개 — 루트에 있던 블로그가 writing 으로 이사했다.
+# ─────────────────────────────────────────────────────────────
+
+[[redirects]]
+  from = "/books"
+  to = "https://writing.sungd.uk/books"
+  status = 301
+
+[[redirects]]
+  from = "/movies"
+  to = "https://writing.sungd.uk/movies"
+  status = 301
+
+[[redirects]]
+  from = "/atom.xml"
+  to = "https://writing.sungd.uk/atom.xml"
+  status = 301
+
+[[redirects]]
+  from = "/rss.xml"
+  to = "https://writing.sungd.uk/rss.xml"
+  status = 301
+
+[[redirects]]
+  from = "/100-days-writing"
+  to = "https://writing.sungd.uk/100-days-writing/"
+  status = 301
+
+[[redirects]]
+  from = "/100-days-writing/*"
+  to = "https://writing.sungd.uk/100-days-writing/"
+  status = 301
+
+[[redirects]]
+  from = "/100days-challenge"
+  to = "https://writing.sungd.uk/100days-challenge/"
+  status = 301
+
+[[redirects]]
+  from = "/100days-challenge/*"
+  to = "https://writing.sungd.uk/100days-challenge/"
+  status = 301
+
+[[redirects]]
+  from = "/1st-place"
+  to = "https://writing.sungd.uk/1st-place/"
+  status = 301
+
+[[redirects]]
+  from = "/1st-place/*"
+  to = "https://writing.sungd.uk/1st-place/"
+  status = 301
+
+[[redirects]]
+  from = "/2026-conferences"
+  to = "https://writing.sungd.uk/2026-conferences/"
+  status = 301
+
+[[redirects]]
+  from = "/2026-conferences/*"
+  to = "https://writing.sungd.uk/2026-conferences/"
+  status = 301
+
+[[redirects]]
+  from = "/250731_25-seasons"
+  to = "https://writing.sungd.uk/250731_25-seasons/"
+  status = 301
+
+[[redirects]]
+  from = "/250731_25-seasons/*"
+  to = "https://writing.sungd.uk/250731_25-seasons/"
+  status = 301
+
+[[redirects]]
+  from = "/250803_how-to-read"
+  to = "https://writing.sungd.uk/250803_how-to-read/"
+  status = 301
+
+[[redirects]]
+  from = "/250803_how-to-read/*"
+  to = "https://writing.sungd.uk/250803_how-to-read/"
+  status = 301
+
+[[redirects]]
+  from = "/250809_did-i-understand"
+  to = "https://writing.sungd.uk/250809_did-i-understand/"
+  status = 301
+
+[[redirects]]
+  from = "/250809_did-i-understand/*"
+  to = "https://writing.sungd.uk/250809_did-i-understand/"
+  status = 301
+
+[[redirects]]
+  from = "/250810_infj-doctor"
+  to = "https://writing.sungd.uk/250810_infj-doctor/"
+  status = 301
+
+[[redirects]]
+  from = "/250810_infj-doctor/*"
+  to = "https://writing.sungd.uk/250810_infj-doctor/"
+  status = 301
+
+[[redirects]]
+  from = "/250810_one-life"
+  to = "https://writing.sungd.uk/250810_one-life/"
+  status = 301
+
+[[redirects]]
+  from = "/250810_one-life/*"
+  to = "https://writing.sungd.uk/250810_one-life/"
+  status = 301
+
+[[redirects]]
+  from = "/250812_note-premium"
+  to = "https://writing.sungd.uk/250812_note-premium/"
+  status = 301
+
+[[redirects]]
+  from = "/250812_note-premium/*"
+  to = "https://writing.sungd.uk/250812_note-premium/"
+  status = 301
+
+[[redirects]]
+  from = "/250812_running-story"
+  to = "https://writing.sungd.uk/250812_running-story/"
+  status = 301
+
+[[redirects]]
+  from = "/250812_running-story/*"
+  to = "https://writing.sungd.uk/250812_running-story/"
+  status = 301
+
+[[redirects]]
+  from = "/250817_health-newbie"
+  to = "https://writing.sungd.uk/250817_health-newbie/"
+  status = 301
+
+[[redirects]]
+  from = "/250817_health-newbie/*"
+  to = "https://writing.sungd.uk/250817_health-newbie/"
+  status = 301
+
+[[redirects]]
+  from = "/250908_grow-together"
+  to = "https://writing.sungd.uk/250908_grow-together/"
+  status = 301
+
+[[redirects]]
+  from = "/250908_grow-together/*"
+  to = "https://writing.sungd.uk/250908_grow-together/"
+  status = 301
+
+[[redirects]]
+  from = "/250919_discovery-of-detail"
+  to = "https://writing.sungd.uk/250919_discovery-of-detail/"
+  status = 301
+
+[[redirects]]
+  from = "/250919_discovery-of-detail/*"
+  to = "https://writing.sungd.uk/250919_discovery-of-detail/"
+  status = 301
+
+[[redirects]]
+  from = "/250919_moma-pictures"
+  to = "https://writing.sungd.uk/250919_moma-pictures/"
+  status = 301
+
+[[redirects]]
+  from = "/250919_moma-pictures/*"
+  to = "https://writing.sungd.uk/250919_moma-pictures/"
+  status = 301
+
+[[redirects]]
+  from = "/251115_lean-sw-dev"
+  to = "https://writing.sungd.uk/251115_lean-sw-dev/"
+  status = 301
+
+[[redirects]]
+  from = "/251115_lean-sw-dev/*"
+  to = "https://writing.sungd.uk/251115_lean-sw-dev/"
+  status = 301
+
+[[redirects]]
+  from = "/251115_pragmatic-thinking"
+  to = "https://writing.sungd.uk/251115_pragmatic-thinking/"
+  status = 301
+
+[[redirects]]
+  from = "/251115_pragmatic-thinking/*"
+  to = "https://writing.sungd.uk/251115_pragmatic-thinking/"
+  status = 301
+
+[[redirects]]
+  from = "/251124_good-at-work"
+  to = "https://writing.sungd.uk/251124_good-at-work/"
+  status = 301
+
+[[redirects]]
+  from = "/251124_good-at-work/*"
+  to = "https://writing.sungd.uk/251124_good-at-work/"
+  status = 301
+
+[[redirects]]
+  from = "/251126_2025-summary"
+  to = "https://writing.sungd.uk/251126_2025-summary/"
+  status = 301
+
+[[redirects]]
+  from = "/251126_2025-summary/*"
+  to = "https://writing.sungd.uk/251126_2025-summary/"
+  status = 301
+
+[[redirects]]
+  from = "/251126_book-pairing"
+  to = "https://writing.sungd.uk/251126_book-pairing/"
+  status = 301
+
+[[redirects]]
+  from = "/251126_book-pairing/*"
+  to = "https://writing.sungd.uk/251126_book-pairing/"
+  status = 301
+
+[[redirects]]
+  from = "/251127_book-categories"
+  to = "https://writing.sungd.uk/251127_book-categories/"
+  status = 301
+
+[[redirects]]
+  from = "/251127_book-categories/*"
+  to = "https://writing.sungd.uk/251127_book-categories/"
+  status = 301
+
+[[redirects]]
+  from = "/251130_apple-work-simple"
+  to = "https://writing.sungd.uk/251130_apple-work-simple/"
+  status = 301
+
+[[redirects]]
+  from = "/251130_apple-work-simple/*"
+  to = "https://writing.sungd.uk/251130_apple-work-simple/"
+  status = 301
+
+[[redirects]]
+  from = "/251209_developer-writing"
+  to = "https://writing.sungd.uk/251209_developer-writing/"
+  status = 301
+
+[[redirects]]
+  from = "/251209_developer-writing/*"
+  to = "https://writing.sungd.uk/251209_developer-writing/"
+  status = 301
+
+[[redirects]]
+  from = "/251210_career-skill"
+  to = "https://writing.sungd.uk/251210_career-skill/"
+  status = 301
+
+[[redirects]]
+  from = "/251210_career-skill/*"
+  to = "https://writing.sungd.uk/251210_career-skill/"
+  status = 301
+
+[[redirects]]
+  from = "/251210_recruiter-guide"
+  to = "https://writing.sungd.uk/251210_recruiter-guide/"
+  status = 301
+
+[[redirects]]
+  from = "/251210_recruiter-guide/*"
+  to = "https://writing.sungd.uk/251210_recruiter-guide/"
+  status = 301
+
+[[redirects]]
+  from = "/251224_interested-books"
+  to = "https://writing.sungd.uk/251224_interested-books/"
+  status = 301
+
+[[redirects]]
+  from = "/251224_interested-books/*"
+  to = "https://writing.sungd.uk/251224_interested-books/"
+  status = 301
+
+[[redirects]]
+  from = "/260108_hell-yeah-or-no"
+  to = "https://writing.sungd.uk/260108_hell-yeah-or-no/"
+  status = 301
+
+[[redirects]]
+  from = "/260108_hell-yeah-or-no/*"
+  to = "https://writing.sungd.uk/260108_hell-yeah-or-no/"
+  status = 301
+
+[[redirects]]
+  from = "/a-is-not-kind-at-least-not-me"
+  to = "https://writing.sungd.uk/a-is-not-kind-at-least-not-me/"
+  status = 301
+
+[[redirects]]
+  from = "/a-is-not-kind-at-least-not-me/*"
+  to = "https://writing.sungd.uk/a-is-not-kind-at-least-not-me/"
+  status = 301
+
+[[redirects]]
+  from = "/admiring-individual"
+  to = "https://writing.sungd.uk/admiring-individual/"
+  status = 301
+
+[[redirects]]
+  from = "/admiring-individual/*"
+  to = "https://writing.sungd.uk/admiring-individual/"
+  status = 301
+
+[[redirects]]
+  from = "/appreciation-as-word"
+  to = "https://writing.sungd.uk/appreciation-as-word/"
+  status = 301
+
+[[redirects]]
+  from = "/appreciation-as-word/*"
+  to = "https://writing.sungd.uk/appreciation-as-word/"
+  status = 301
+
+[[redirects]]
+  from = "/architects-diary"
+  to = "https://writing.sungd.uk/architects-diary/"
+  status = 301
+
+[[redirects]]
+  from = "/architects-diary/*"
+  to = "https://writing.sungd.uk/architects-diary/"
+  status = 301
+
+[[redirects]]
+  from = "/breaking-bias"
+  to = "https://writing.sungd.uk/breaking-bias/"
+  status = 301
+
+[[redirects]]
+  from = "/breaking-bias/*"
+  to = "https://writing.sungd.uk/breaking-bias/"
+  status = 301
+
+[[redirects]]
+  from = "/broad-knowledge-for-conversation"
+  to = "https://writing.sungd.uk/broad-knowledge-for-conversation/"
+  status = 301
+
+[[redirects]]
+  from = "/broad-knowledge-for-conversation/*"
+  to = "https://writing.sungd.uk/broad-knowledge-for-conversation/"
+  status = 301
+
+[[redirects]]
+  from = "/claude-code-tips"
+  to = "https://writing.sungd.uk/claude-code-tips/"
+  status = 301
+
+[[redirects]]
+  from = "/claude-code-tips/*"
+  to = "https://writing.sungd.uk/claude-code-tips/"
+  status = 301
+
+[[redirects]]
+  from = "/claude-directory-structure"
+  to = "https://writing.sungd.uk/claude-directory-structure/"
+  status = 301
+
+[[redirects]]
+  from = "/claude-directory-structure/*"
+  to = "https://writing.sungd.uk/claude-directory-structure/"
+  status = 301
+
+[[redirects]]
+  from = "/claude-skill-md"
+  to = "https://writing.sungd.uk/claude-skill-md/"
+  status = 301
+
+[[redirects]]
+  from = "/claude-skill-md/*"
+  to = "https://writing.sungd.uk/claude-skill-md/"
+  status = 301
+
+[[redirects]]
+  from = "/claude-subagents"
+  to = "https://writing.sungd.uk/claude-subagents/"
+  status = 301
+
+[[redirects]]
+  from = "/claude-subagents/*"
+  to = "https://writing.sungd.uk/claude-subagents/"
+  status = 301
+
+[[redirects]]
+  from = "/code-review"
+  to = "https://writing.sungd.uk/code-review/"
+  status = 301
+
+[[redirects]]
+  from = "/code-review/*"
+  to = "https://writing.sungd.uk/code-review/"
+  status = 301
+
+[[redirects]]
+  from = "/constitution-of-the-republic-of-korea"
+  to = "https://writing.sungd.uk/constitution-of-the-republic-of-korea/"
+  status = 301
+
+[[redirects]]
+  from = "/constitution-of-the-republic-of-korea/*"
+  to = "https://writing.sungd.uk/constitution-of-the-republic-of-korea/"
+  status = 301
+
+[[redirects]]
+  from = "/data-scientist-principle"
+  to = "https://writing.sungd.uk/data-scientist-principle/"
+  status = 301
+
+[[redirects]]
+  from = "/data-scientist-principle/*"
+  to = "https://writing.sungd.uk/data-scientist-principle/"
+  status = 301
+
+[[redirects]]
+  from = "/decision-and-future"
+  to = "https://writing.sungd.uk/decision-and-future/"
+  status = 301
+
+[[redirects]]
+  from = "/decision-and-future/*"
+  to = "https://writing.sungd.uk/decision-and-future/"
+  status = 301
+
+[[redirects]]
+  from = "/experience-and-knowledge"
+  to = "https://writing.sungd.uk/experience-and-knowledge/"
+  status = 301
+
+[[redirects]]
+  from = "/experience-and-knowledge/*"
+  to = "https://writing.sungd.uk/experience-and-knowledge/"
+  status = 301
+
+[[redirects]]
+  from = "/failure-is-a-compass"
+  to = "https://writing.sungd.uk/failure-is-a-compass/"
+  status = 301
+
+[[redirects]]
+  from = "/failure-is-a-compass/*"
+  to = "https://writing.sungd.uk/failure-is-a-compass/"
+  status = 301
+
+[[redirects]]
+  from = "/fake-senior-junior"
+  to = "https://writing.sungd.uk/fake-senior-junior/"
+  status = 301
+
+[[redirects]]
+  from = "/fake-senior-junior/*"
+  to = "https://writing.sungd.uk/fake-senior-junior/"
+  status = 301
+
+[[redirects]]
+  from = "/fear-and-trust"
+  to = "https://writing.sungd.uk/fear-and-trust/"
+  status = 301
+
+[[redirects]]
+  from = "/fear-and-trust/*"
+  to = "https://writing.sungd.uk/fear-and-trust/"
+  status = 301
+
+[[redirects]]
+  from = "/feeling-good-at-work"
+  to = "https://writing.sungd.uk/feeling-good-at-work/"
+  status = 301
+
+[[redirects]]
+  from = "/feeling-good-at-work/*"
+  to = "https://writing.sungd.uk/feeling-good-at-work/"
+  status = 301
+
+[[redirects]]
+  from = "/fieldstone-method"
+  to = "https://writing.sungd.uk/fieldstone-method/"
+  status = 301
+
+[[redirects]]
+  from = "/fieldstone-method/*"
+  to = "https://writing.sungd.uk/fieldstone-method/"
+  status = 301
+
+[[redirects]]
+  from = "/finding-myself-through-writing"
+  to = "https://writing.sungd.uk/finding-myself-through-writing/"
+  status = 301
+
+[[redirects]]
+  from = "/finding-myself-through-writing/*"
+  to = "https://writing.sungd.uk/finding-myself-through-writing/"
+  status = 301
+
+[[redirects]]
+  from = "/git-checkout"
+  to = "https://writing.sungd.uk/git-checkout/"
+  status = 301
+
+[[redirects]]
+  from = "/git-checkout/*"
+  to = "https://writing.sungd.uk/git-checkout/"
+  status = 301
+
+[[redirects]]
+  from = "/github-project"
+  to = "https://writing.sungd.uk/github-project/"
+  status = 301
+
+[[redirects]]
+  from = "/github-project/*"
+  to = "https://writing.sungd.uk/github-project/"
+  status = 301
+
+[[redirects]]
+  from = "/goethe-said-everything"
+  to = "https://writing.sungd.uk/goethe-said-everything/"
+  status = 301
+
+[[redirects]]
+  from = "/goethe-said-everything/*"
+  to = "https://writing.sungd.uk/goethe-said-everything/"
+  status = 301
+
+[[redirects]]
+  from = "/ide"
+  to = "https://writing.sungd.uk/ide/"
+  status = 301
+
+[[redirects]]
+  from = "/ide/*"
+  to = "https://writing.sungd.uk/ide/"
+  status = 301
+
+[[redirects]]
+  from = "/joy-and-sorrow-of-work-kr"
+  to = "https://writing.sungd.uk/joy-and-sorrow-of-work-kr/"
+  status = 301
+
+[[redirects]]
+  from = "/joy-and-sorrow-of-work-kr/*"
+  to = "https://writing.sungd.uk/joy-and-sorrow-of-work-kr/"
+  status = 301
+
+[[redirects]]
+  from = "/just-do-it-and-repeat-and-feel"
+  to = "https://writing.sungd.uk/just-do-it-and-repeat-and-feel/"
+  status = 301
+
+[[redirects]]
+  from = "/just-do-it-and-repeat-and-feel/*"
+  to = "https://writing.sungd.uk/just-do-it-and-repeat-and-feel/"
+  status = 301
+
+[[redirects]]
+  from = "/less-bold-life"
+  to = "https://writing.sungd.uk/less-bold-life/"
+  status = 301
+
+[[redirects]]
+  from = "/less-bold-life/*"
+  to = "https://writing.sungd.uk/less-bold-life/"
+  status = 301
+
+[[redirects]]
+  from = "/life-is-a-marathon"
+  to = "https://writing.sungd.uk/life-is-a-marathon/"
+  status = 301
+
+[[redirects]]
+  from = "/life-is-a-marathon/*"
+  to = "https://writing.sungd.uk/life-is-a-marathon/"
+  status = 301
+
+[[redirects]]
+  from = "/like-it-because-you-like-it"
+  to = "https://writing.sungd.uk/like-it-because-you-like-it/"
+  status = 301
+
+[[redirects]]
+  from = "/like-it-because-you-like-it/*"
+  to = "https://writing.sungd.uk/like-it-because-you-like-it/"
+  status = 301
+
+[[redirects]]
+  from = "/macos"
+  to = "https://writing.sungd.uk/macos/"
+  status = 301
+
+[[redirects]]
+  from = "/macos/*"
+  to = "https://writing.sungd.uk/macos/"
+  status = 301
+
+[[redirects]]
+  from = "/maybe-i-like-spring"
+  to = "https://writing.sungd.uk/maybe-i-like-spring/"
+  status = 301
+
+[[redirects]]
+  from = "/maybe-i-like-spring/*"
+  to = "https://writing.sungd.uk/maybe-i-like-spring/"
+  status = 301
+
+[[redirects]]
+  from = "/mongodb-data-versioning"
+  to = "https://writing.sungd.uk/mongodb-data-versioning/"
+  status = 301
+
+[[redirects]]
+  from = "/mongodb-data-versioning/*"
+  to = "https://writing.sungd.uk/mongodb-data-versioning/"
+  status = 301
+
+[[redirects]]
+  from = "/moral-uncertainty"
+  to = "https://writing.sungd.uk/moral-uncertainty/"
+  status = 301
+
+[[redirects]]
+  from = "/moral-uncertainty/*"
+  to = "https://writing.sungd.uk/moral-uncertainty/"
+  status = 301
+
+[[redirects]]
+  from = "/movie-face"
+  to = "https://writing.sungd.uk/movie-face/"
+  status = 301
+
+[[redirects]]
+  from = "/movie-face/*"
+  to = "https://writing.sungd.uk/movie-face/"
+  status = 301
+
+[[redirects]]
+  from = "/people-over-system"
+  to = "https://writing.sungd.uk/people-over-system/"
+  status = 301
+
+[[redirects]]
+  from = "/people-over-system/*"
+  to = "https://writing.sungd.uk/people-over-system/"
+  status = 301
+
+[[redirects]]
+  from = "/philosophy-changes-weather"
+  to = "https://writing.sungd.uk/philosophy-changes-weather/"
+  status = 301
+
+[[redirects]]
+  from = "/philosophy-changes-weather/*"
+  to = "https://writing.sungd.uk/philosophy-changes-weather/"
+  status = 301
+
+[[redirects]]
+  from = "/positive-direction"
+  to = "https://writing.sungd.uk/positive-direction/"
+  status = 301
+
+[[redirects]]
+  from = "/positive-direction/*"
+  to = "https://writing.sungd.uk/positive-direction/"
+  status = 301
+
+[[redirects]]
+  from = "/project-hail-mary"
+  to = "https://writing.sungd.uk/project-hail-mary/"
+  status = 301
+
+[[redirects]]
+  from = "/project-hail-mary/*"
+  to = "https://writing.sungd.uk/project-hail-mary/"
+  status = 301
+
+[[redirects]]
+  from = "/senior-together-not-alone"
+  to = "https://writing.sungd.uk/senior-together-not-alone/"
+  status = 301
+
+[[redirects]]
+  from = "/senior-together-not-alone/*"
+  to = "https://writing.sungd.uk/senior-together-not-alone/"
+  status = 301
+
+[[redirects]]
+  from = "/simplicity-dave-thomas"
+  to = "https://writing.sungd.uk/simplicity-dave-thomas/"
+  status = 301
+
+[[redirects]]
+  from = "/simplicity-dave-thomas/*"
+  to = "https://writing.sungd.uk/simplicity-dave-thomas/"
+  status = 301
+
+[[redirects]]
+  from = "/small-happiness"
+  to = "https://writing.sungd.uk/small-happiness/"
+  status = 301
+
+[[redirects]]
+  from = "/small-happiness/*"
+  to = "https://writing.sungd.uk/small-happiness/"
+  status = 301
+
+[[redirects]]
+  from = "/smartphone-photo"
+  to = "https://writing.sungd.uk/smartphone-photo/"
+  status = 301
+
+[[redirects]]
+  from = "/smartphone-photo/*"
+  to = "https://writing.sungd.uk/smartphone-photo/"
+  status = 301
+
+[[redirects]]
+  from = "/stare-at-professional"
+  to = "https://writing.sungd.uk/stare-at-professional/"
+  status = 301
+
+[[redirects]]
+  from = "/stare-at-professional/*"
+  to = "https://writing.sungd.uk/stare-at-professional/"
+  status = 301
+
+[[redirects]]
+  from = "/tablet-dev-with-ngrok"
+  to = "https://writing.sungd.uk/tablet-dev-with-ngrok/"
+  status = 301
+
+[[redirects]]
+  from = "/tablet-dev-with-ngrok/*"
+  to = "https://writing.sungd.uk/tablet-dev-with-ngrok/"
+  status = 301
+
+[[redirects]]
+  from = "/the-go-giver-1"
+  to = "https://writing.sungd.uk/the-go-giver-1/"
+  status = 301
+
+[[redirects]]
+  from = "/the-go-giver-1/*"
+  to = "https://writing.sungd.uk/the-go-giver-1/"
+  status = 301
+
+[[redirects]]
+  from = "/we-are-all-trying-here"
+  to = "https://writing.sungd.uk/we-are-all-trying-here/"
+  status = 301
+
+[[redirects]]
+  from = "/we-are-all-trying-here/*"
+  to = "https://writing.sungd.uk/we-are-all-trying-here/"
+  status = 301
+
+[[redirects]]
+  from = "/what-do-people-live-for"
+  to = "https://writing.sungd.uk/what-do-people-live-for/"
+  status = 301
+
+[[redirects]]
+  from = "/what-do-people-live-for/*"
+  to = "https://writing.sungd.uk/what-do-people-live-for/"
+  status = 301
+
+[[redirects]]
+  from = "/what-has-changed"
+  to = "https://writing.sungd.uk/what-has-changed/"
+  status = 301
+
+[[redirects]]
+  from = "/what-has-changed/*"
+  to = "https://writing.sungd.uk/what-has-changed/"
+  status = 301
+
+[[redirects]]
+  from = "/whats-in-my-head"
+  to = "https://writing.sungd.uk/whats-in-my-head/"
+  status = 301
+
+[[redirects]]
+  from = "/whats-in-my-head/*"
+  to = "https://writing.sungd.uk/whats-in-my-head/"
+  status = 301
+
+[[redirects]]
+  from = "/who-moved-my-cheese"
+  to = "https://writing.sungd.uk/who-moved-my-cheese/"
+  status = 301
+
+[[redirects]]
+  from = "/who-moved-my-cheese/*"
+  to = "https://writing.sungd.uk/who-moved-my-cheese/"
+  status = 301
+
+[[redirects]]
+  from = "/writing-and-metaphor"
+  to = "https://writing.sungd.uk/writing-and-metaphor/"
+  status = 301
+
+[[redirects]]
+  from = "/writing-and-metaphor/*"
+  to = "https://writing.sungd.uk/writing-and-metaphor/"
+  status = 301

@@ -9,7 +9,7 @@ import remarkBlogHide from './src/plugins/remark-blog-hide.js';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://newhigen.github.io',
+  site: 'https://sungd.uk',
   vite: {
     plugins: [tailwindcss()],
     server: {
