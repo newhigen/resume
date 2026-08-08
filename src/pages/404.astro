@@ -26,7 +26,7 @@ import SiteLinks from '../components/layout/SiteLinks.astro';
     font-size: 0.9375rem;
     color: var(--text-secondary);
     line-height: 1.8;
-    margin: 0 0 1.25rem;
+    margin: 0 0 2.5rem;
   }
   .nf-wrap p a {
     color: var(--text-primary);
@@ -34,24 +34,6 @@ import SiteLinks from '../components/layout/SiteLinks.astro';
   }
   .nf-wrap p a:hover {
     border-bottom-color: var(--text-tertiary);
-  }
-  .nf-jump {
-    display: none;
-    padding: 14px 16px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    margin-bottom: 2.5rem;
-  }
-  .nf-jump.on { display: block; }
-  .nf-jump-label {
-    font-size: 0.8125rem;
-    color: var(--text-tertiary);
-    margin: 0 0 6px;
-  }
-  .nf-jump a {
-    font-size: 0.9375rem;
-    color: var(--text-primary);
-    word-break: break-all;
   }
   .nf-section {
     font-size: 0.8125rem;
@@ -67,35 +49,16 @@ import SiteLinks from '../components/layout/SiteLinks.astro';
   }
 </style>
 
-<BaseLayout title="찾는 쪽이 없습니다 — sungduk">
+<BaseLayout title="찾는 쪽이 없습니다 — 조성덕">
   <div class="nf-wrap">
     <p class="nf-code">404</p>
     <h1>찾는 쪽이 없습니다</h1>
     <p>
-      이 주소에 있던 글은 <a href="https://writing.sungd.uk">writing.sungd.uk</a> 로 옮겼습니다.
-      예전 링크나 북마크로 오셨다면 그쪽에 그대로 있습니다.
+      주소를 다시 확인해 주세요. <a href="/">이력서</a> 나 <a href="/projects">프로젝트</a> 에서
+      찾으시는 게 있을 수 있습니다.
     </p>
 
-    <div class="nf-jump" id="nf-jump">
-      <p class="nf-jump-label">같은 주소를 writing 에서 열기</p>
-      <a id="nf-jump-link" href="https://writing.sungd.uk">writing.sungd.uk</a>
-    </div>
-
     <h2 class="nf-section">다른 곳</h2>
-    <SiteLinks current="home" />
+    <SiteLinks current="resume" />
   </div>
 </BaseLayout>
-
-<script is:inline>
-  (function () {
-    var path = location.pathname;
-    if (path === '/' || path === '' || path === '/404.html') return;
-    var box = document.getElementById('nf-jump');
-    var link = document.getElementById('nf-jump-link');
-    if (!box || !link) return;
-    var target = 'https://writing.sungd.uk' + path;
-    link.href = target;
-    link.textContent = 'writing.sungd.uk' + path;
-    box.classList.add('on');
-  })();
-</script>
