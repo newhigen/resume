@@ -28,7 +28,7 @@ src/pages/projects/    프로젝트 목록·상세
 | [sungd.uk](https://sungd.uk)                 | 링크만 있는 랜딩                  | home         |
 | [resume.sungd.uk](https://resume.sungd.uk)   | 이력서 + 프로젝트 (이 repo)       | resume       |
 | [writing.sungd.uk](https://writing.sungd.uk) | 글 — 책·생각·기술                 | blog-writing |
-| [today.sungd.uk](https://today.sungd.uk)     | Claude Code·Codex 릴리스 큐레이션 | ai-pick      |
+| [ai.sungd.uk](https://ai.sungd.uk)           | Claude Code·Codex 릴리스 큐레이션 | ai-pick      |
 
 `tech.sungd.uk` 는 없어졌다. 기술 글 12편은 writing 으로 옮겼고, 프로젝트는 여기 남았다.
 옛 주소를 넘기는 리다이렉트는 걸지 않기로 했다 — 대신 404 쪽이 갈 곳을 안내한다.
