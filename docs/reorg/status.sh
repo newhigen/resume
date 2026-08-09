@@ -2,7 +2,7 @@
 # 재편이 어디까지 왔는지 한 번에 본다. 각 단계 끝나고 돌려보면 된다.
 #   bash docs/reorg/status.sh
 
-HOSTS="sungd.uk writing.sungd.uk resume.sungd.uk today.sungd.uk tech.sungd.uk ai.sungd.uk"
+HOSTS="sungd.uk writing.sungd.uk resume.sungd.uk ai.sungd.uk tech.sungd.uk"
 
 echo "=== GitHub Pages 가 어느 도메인을 잡고 있나"
 for r in blog-tech blog-writing resume ai-pick; do

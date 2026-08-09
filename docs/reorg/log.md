@@ -87,3 +87,12 @@ Netlify 안에서는 글 주소 79개를 하나씩 적었다. Cloudflare 규칙�
 ### 그 밖
 
 작업 도중 `~/dev/sites/` 가 없어지고 그 안의 폴더들이 `~/dev/` 바로 아래로 올라갔다. 이 세션이 한 일은 아니다. 작업본(worktree)이 절대 경로를 기억해서 끊겼고 `git worktree repair` 로 살렸다. 커밋은 이미 push 해둬서 잃은 건 없다. 이 문서의 경로는 옮긴 뒤 기준.
+
+## 2026-08-09 — today 를 ai 로 되돌림
+
+사용자 결정으로 `today.sungd.uk` 를 원래 이름 `ai.sungd.uk` 로 되돌렸다.
+
+개명 근거(범위가 넓은 ai 보다 하는 일과 맞는 today)는 그때 판단 그대로지만, 실제로 써보니 사용자가 원래 이름을 택했다. today 가 살아 있던 기간이 하루도 안 돼 밖에 걸린 링크가 없고, `ai.sungd.uk` 는 그 사이 주인이 없어 404 였을 뿐이라 되돌리는 비용이 거의 없었다.
+
+`plan.md`·`plan.html` 은 그때의 계획 기록이라 today 로 남겨둔다. 실제로 쓰는 `cloudflare.md` 와 `status.sh` 만 ai 로 고쳤다.
+

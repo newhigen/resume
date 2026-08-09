@@ -23,7 +23,7 @@ GitHub Pages 는 301 을 못 걸고, repo 하나에 도메인 하나만 붙일 �
 ```
 sungd.uk          A 185.199.108~111.153     주황 (인증서 발급 후)
 writing.sungd.uk  CNAME newhigen.github.io  회색
-today.sungd.uk    CNAME newhigen.github.io  회색
+ai.sungd.uk       CNAME newhigen.github.io  회색
 resume.sungd.uk   CNAME newhigen.github.io  회색 (그대로)
 tech.sungd.uk     CNAME newhigen.github.io  주황 — 넘김 전용
 ai.sungd.uk       CNAME newhigen.github.io  주황 — 넘김 전용
@@ -132,7 +132,7 @@ http.host eq "ai.sungd.uk"
 넘길 곳 — Dynamic:
 
 ```
-concat("https://today.sungd.uk", http.request.uri.path)
+concat("https://ai.sungd.uk", http.request.uri.path)
 ```
 
 ## 확인
