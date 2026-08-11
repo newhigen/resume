@@ -35,6 +35,17 @@
   }
   .lead b{color:var(--text);font-weight:600}
 
+  .stale{
+    background:#fffaf0; border-radius:10px;
+    box-shadow:inset 0 0 0 1px rgba(180,120,20,.22);
+    padding:16px 18px; margin:0 0 20px;
+  }
+  .stale p{margin:0 0 8px;color:#7a5a1e;font-size:14.5px}
+  .stale p:last-child{margin-bottom:0}
+  .stale-head{font-weight:600;color:#6b4c12}
+  .stale-where{font-size:13.5px;color:#8a6a2e}
+  .stale code{background:rgba(180,120,20,.10);color:#6b4c12}
+
   section{margin-top:44px}
   h2{
     font-size:13px;font-weight:600;color:var(--muted);
@@ -126,6 +137,18 @@
 <header>
   <h1>루트 되찾기</h1>
   <p class="subtitle">sungd.uk 아래 사이트 넷을 다시 짜는 계획 — 2026-08-07</p>
+  <div class="stale">
+    <p class="stale-head">2026-08-07 시점의 계획이다. 지금 상태와 다르다.</p>
+    <p>
+      세운 뒤에 전제가 세 번 바뀌었다 — 호스팅이 Netlify 가 아니라 GitHub Pages 였고,
+      <code>today.sungd.uk</code> 는 <code>ai.sungd.uk</code> 로 되돌렸고, 넘김(리다이렉트)은 안 걸기로 했다.
+      결정 과정 기록으로 두는 문서라 그때 그대로 둔다.
+    </p>
+    <p class="stale-where">
+      지금 상태는 각 repo 의 README · 무슨 일이 있었는지는 <code>log.md</code> ·
+      실제로 쓰는 것은 <code>cloudflare.md</code>(넘김 조건식)와 <code>status.sh</code>(점검)
+    </p>
+  </div>
   <p class="lead">
     <b>사이트는 아직 하나도 안 바뀌었다.</b> 코드 작업은 끝나서 세 repo 브랜치에 올려뒀고,
     남은 건 DNS 레코드·GitHub Pages 설정·Cloudflare 규칙이다. 웹에서만 되는 일이라 직접 해야 한다.
